@@ -37,11 +37,13 @@ namespace GameTracker
         {
             this.userName = localForm.username;
             this.gameCategory = preferencesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            if ((int)user_Type_of_gamesTableAdapter1.CheckDuplicates(this.userName,this.gameCategory) == 0)
+            int dups = (int)user_Type_of_gamesTableAdapter1.CheckDuplicates(this.userName, this.gameCategory);
+            if (dups == 0)
             {
+                //MessageBox.Show( Convert.ToString(dups));
                 selectedCategoryLabel.Text = this.gameCategory;
                 selectedUnameLabel.Text = this.userName;
-                user_Type_of_gamesTableAdapter1.InsertToPrefs(this.userName, this.gameCategory);              
+               user_Type_of_gamesTableAdapter1.InsertToPrefs(this.userName, this.gameCategory);              
                 verificationLabel.Text = "Added";
             }
             else
