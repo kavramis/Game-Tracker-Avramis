@@ -2796,9 +2796,10 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT COUNT(*) AS Exp1\r\nFROM User_Type_of_games\r\nWHERE       (UserName = ?) AND " +
-                "(GameType = ?)\r\n\r\nInsertToPrefs\r\nINSERT INTO `User_Type_of_games` (`UserName`, `" +
-                "GameType`) VALUES (?, ?)\r\n";
+                "(GameType = ?)\r\n\r\n\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UserName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UserName", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("GameType", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "GameType", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO `User_Type_of_games` (`UserName`, `GameType`) VALUES (?, ?)";
@@ -2982,8 +2983,20 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object CheckDuplicates() {
+        public virtual object CheckDuplicates(string UserName, string GameType) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((UserName == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserName));
+            }
+            if ((GameType == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(GameType));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

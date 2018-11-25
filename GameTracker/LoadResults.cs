@@ -190,7 +190,7 @@ namespace GameTracker
 
         private void GoToPreferencesButton_Click(object sender, EventArgs e)
         {
-            Preferences pref = new Preferences();
+            Preferences pref = new Preferences(loginForm);
             pref.Show();
         }
     }

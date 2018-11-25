@@ -10,26 +10,51 @@ using System.Windows.Forms;
 
 namespace GameTracker
 {
+    
     public partial class Preferences : Form
     {
-        public Preferences()
+        Login localForm = new Login();
+        public string userName;
+        public string gameCategory;
+        public Preferences(Login incomingForm)
         {
-            
+            localForm = incomingForm; 
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Preferences_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'gameTracke_DatabaseDataSet1.Type_of_games' table. You can move, or remove it, as needed.
-            this.type_of_gamesTableAdapter1.Fill(this.gameTracke_DatabaseDataSet1.Type_of_games);
+            // TODO: This line of code loads data into the 'gameTracke_DatabaseDataSet.Type_of_games' table. You can move, or remove it, as needed.
+            this.type_of_gamesTableAdapter.Fill(this.gameTracke_DatabaseDataSet.Type_of_games);                
             preferencesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            userLabel.Text = localForm.username;            
 
+        }
 
+        private void preferencesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.userName = localForm.username;
+            this.gameCategory = preferencesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if ((int)user_Type_of_gamesTableAdapter1.CheckDuplicates(this.userName,this.gameCategory) == 0)
+            {
+                selectedCategoryLabel.Text = this.gameCategory;
+                selectedUnameLabel.Text = this.userName;
+                user_Type_of_gamesTableAdapter1.InsertToPrefs(this.userName, this.gameCategory);              
+                verificationLabel.Text = "Added";
+            }
+            else
+            {
+                verificationLabel.Text = "Already Exists";
+            }
+        }
+
+        private void openPrefList_Click(object sender, EventArgs e)
+        {
+            PreferencesWatchList pw = new PreferencesWatchList();
+            pw.Show();
+        
         }
     }
 }

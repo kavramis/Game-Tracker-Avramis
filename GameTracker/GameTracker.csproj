@@ -66,6 +66,12 @@
     <Compile Include="Preferences.Designer.cs">
       <DependentUpon>Preferences.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreferencesWatchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreferencesWatchList.Designer.cs">
+      <DependentUpon>PreferencesWatchList.cs</DependentUpon>
+    </Compile>
     <Compile Include="registerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preferences.resx">
       <DependentUpon>Preferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWatchList.resx">
+      <DependentUpon>PreferencesWatchList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registerForm.resx">
       <DependentUpon>registerForm.cs</DependentUpon>
