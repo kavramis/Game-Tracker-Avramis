@@ -21,6 +21,9 @@ namespace GameTracker
             localForm = incomingForm;
             
             InitializeComponent();
+            selectedUnameLabel.Hide();
+            selectedCategoryLabel.Hide();
+            verificationLabel.Hide();
         }
 
        
@@ -36,6 +39,9 @@ namespace GameTracker
 
         private void preferencesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            selectedUnameLabel.Show();
+            selectedCategoryLabel.Show();
+            verificationLabel.Show();
             this.userName = localForm.username;
             this.gameCategory = preferencesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             int dups = (int)user_Type_of_gamesTableAdapter1.CheckDuplicates(this.userName, this.gameCategory);
@@ -55,10 +61,16 @@ namespace GameTracker
 
         private void openPrefList_Click(object sender, EventArgs e)
         {
+           
             this.userName = localForm.username;
-            PreferencesWatchList pw = new PreferencesWatchList(this);
+            PreferencesWatchList pw = new PreferencesWatchList(localForm);
             pw.Show();
-        
+            this.Hide();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

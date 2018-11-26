@@ -19,6 +19,7 @@ namespace GameTracker
         {
             LrForm = incomingForm;
             InitializeComponent();
+            watchListCheckLabel.Hide();
 
         }
        
@@ -26,7 +27,8 @@ namespace GameTracker
         private void SelectedGameBtn_Click(object sender, EventArgs e)
         {
 
-
+            watchListCheckLabel.Show();
+            watchListCheckLabel.Text = "Added to watch list";
             if (SelectedGameOptions.SelectedIndex == 0)
             {
                 string url = LrForm.urlVar;
@@ -41,6 +43,8 @@ namespace GameTracker
                 else { watchListCheckLabel.Text = "Already Added to watch list"; }
 
             }
+            this.Hide();
+
         }
     }
 }

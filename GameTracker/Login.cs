@@ -17,6 +17,7 @@ namespace GameTracker
         public Login()
         {
             InitializeComponent();
+            errorLabel.Hide();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace GameTracker
             }
             else
             {
+                errorLabel.Show();
                errorLabel.Text = "Something went wrong";
             }
             

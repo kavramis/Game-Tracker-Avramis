@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesWatchList));
             this.userCategoryPrefDataGridView = new System.Windows.Forms.DataGridView();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,15 +37,24 @@
             this.gameTracke_DatabaseDataSet = new GameTracker.GameTracke_DatabaseDataSet();
             this.user_Type_of_gamesTableAdapter = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.User_Type_of_gamesTableAdapter();
             this.watchListDataGridView = new System.Windows.Forms.DataGridView();
-            this.watchListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.watchListTableAdapter = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter();
             this.gameTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.watchListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.watchListTableAdapter = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter();
+            this.Preferences = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.DeletePrefsButton = new System.Windows.Forms.Button();
+            this.DeleteWatchlistButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.userCategoryPrefDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTypeofgamesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameTracke_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchListBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // userCategoryPrefDataGridView
@@ -55,7 +65,7 @@
             this.userNameDataGridViewTextBoxColumn,
             this.gameTypeDataGridViewTextBoxColumn});
             this.userCategoryPrefDataGridView.DataSource = this.userTypeofgamesBindingSource;
-            this.userCategoryPrefDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.userCategoryPrefDataGridView.Location = new System.Drawing.Point(181, 34);
             this.userCategoryPrefDataGridView.Name = "userCategoryPrefDataGridView";
             this.userCategoryPrefDataGridView.Size = new System.Drawing.Size(240, 150);
             this.userCategoryPrefDataGridView.TabIndex = 0;
@@ -94,19 +104,10 @@
             this.gameTitleDataGridViewTextBoxColumn,
             this.userNameDataGridViewTextBoxColumn1});
             this.watchListDataGridView.DataSource = this.watchListBindingSource;
-            this.watchListDataGridView.Location = new System.Drawing.Point(367, 12);
+            this.watchListDataGridView.Location = new System.Drawing.Point(529, 34);
             this.watchListDataGridView.Name = "watchListDataGridView";
             this.watchListDataGridView.Size = new System.Drawing.Size(240, 150);
             this.watchListDataGridView.TabIndex = 1;
-            // 
-            // watchListBindingSource
-            // 
-            this.watchListBindingSource.DataMember = "WatchList";
-            this.watchListBindingSource.DataSource = this.gameTracke_DatabaseDataSet;
-            // 
-            // watchListTableAdapter
-            // 
-            this.watchListTableAdapter.ClearBeforeFill = true;
             // 
             // gameTitleDataGridViewTextBoxColumn
             // 
@@ -120,13 +121,107 @@
             this.userNameDataGridViewTextBoxColumn1.HeaderText = "UserName";
             this.userNameDataGridViewTextBoxColumn1.Name = "userNameDataGridViewTextBoxColumn1";
             // 
+            // watchListBindingSource
+            // 
+            this.watchListBindingSource.DataMember = "WatchList";
+            this.watchListBindingSource.DataSource = this.gameTracke_DatabaseDataSet;
+            // 
+            // watchListTableAdapter
+            // 
+            this.watchListTableAdapter.ClearBeforeFill = true;
+            // 
+            // Preferences
+            // 
+            this.Preferences.AutoSize = true;
+            this.Preferences.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Preferences.ForeColor = System.Drawing.Color.Cyan;
+            this.Preferences.Location = new System.Drawing.Point(178, 12);
+            this.Preferences.Name = "Preferences";
+            this.Preferences.Size = new System.Drawing.Size(101, 19);
+            this.Preferences.TabIndex = 2;
+            this.Preferences.Text = "Preferences";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.Location = new System.Drawing.Point(526, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "WatchList";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.ExitButton);
+            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(110, 452);
+            this.panel1.TabIndex = 4;
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ExitButton.ForeColor = System.Drawing.Color.Cyan;
+            this.ExitButton.Location = new System.Drawing.Point(0, 3);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(85, 23);
+            this.ExitButton.TabIndex = 0;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // DeletePrefsButton
+            // 
+            this.DeletePrefsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeletePrefsButton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.DeletePrefsButton.ForeColor = System.Drawing.Color.Cyan;
+            this.DeletePrefsButton.Location = new System.Drawing.Point(181, 226);
+            this.DeletePrefsButton.Name = "DeletePrefsButton";
+            this.DeletePrefsButton.Size = new System.Drawing.Size(91, 33);
+            this.DeletePrefsButton.TabIndex = 5;
+            this.DeletePrefsButton.Text = "DeletePrefs";
+            this.DeletePrefsButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteWatchlistButton
+            // 
+            this.DeleteWatchlistButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteWatchlistButton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteWatchlistButton.ForeColor = System.Drawing.Color.Cyan;
+            this.DeleteWatchlistButton.Location = new System.Drawing.Point(529, 226);
+            this.DeleteWatchlistButton.Name = "DeleteWatchlistButton";
+            this.DeleteWatchlistButton.Size = new System.Drawing.Size(111, 33);
+            this.DeleteWatchlistButton.TabIndex = 6;
+            this.DeleteWatchlistButton.Text = "DeleteWatchlist";
+            this.DeleteWatchlistButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(92, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 22);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // PreferencesWatchList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteWatchlistButton);
+            this.Controls.Add(this.DeletePrefsButton);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Preferences);
             this.Controls.Add(this.watchListDataGridView);
             this.Controls.Add(this.userCategoryPrefDataGridView);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PreferencesWatchList";
             this.Text = "PreferencesWatchList";
             this.Load += new System.EventHandler(this.PreferencesWatchList_Load);
@@ -135,7 +230,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gameTracke_DatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchListBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,5 +250,12 @@
         private GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter watchListTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn gameTitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label Preferences;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button DeletePrefsButton;
+        private System.Windows.Forms.Button DeleteWatchlistButton;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -120,12 +120,6 @@
   <metadata name="userTypeofgamesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>233, 17</value>
   </metadata>
-  <metadata name="userTypeofgamesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>233, 17</value>
-  </metadata>
-  <metadata name="gameTracke_DatabaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="gameTracke_DatabaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -138,4 +132,23 @@
   <metadata name="watchListTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEASABIAAD/4QCqRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAZKG
+        AAcAAAB0AAAALAAAAABDAFIARQBBAFQATwBSADoAIABnAGQALQBqAHAAZQBnACAAdgAxAC4AMAAgACgA
+        dQBzAGkAbgBnACAASQBKAEcAIABKAFAARQBHACAAdgA4ADAAKQAsACAAcQB1AGEAbABpAHQAeQAgAD0A
+        IAA5ADAACgAAAAAA/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4L
+        CxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQU
+        FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAFgASAwEiAAIRAQMRAf/EABgAAQADAQAA
+        AAAAAAAAAAAAAAAHCAkG/8QAJBAAAQQBBAIDAQEAAAAAAAAAAQIDBAUGAAcREgghCRNBMTP/xAAUAQEA
+        AAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AonsBuPi0fOGY
+        u51ReZXSWL7bSn669kRZkVSlcFxPCurv95KVcE/ih+3yttxduvBbdLP7Ta3OaO7biQodbMw68tpsic5J
+        ZmLM1Laij60ufV1SglZAUF8j8OW+Muoj5FVuOrS22iU0pSlHgJAWCSTrZfN6HFPMjfzNtvMSyXFhiT2O
+        1trPuqCqgzJTjqpziZjQlpT3S440G09io9fR6nk8hONL8g3j/cU8Cerc2przKYbfMSZ3Q+x2SFdHEgHh
+        SeeCOfRB01JtLsDtzj9NAq4WC46iFBjtxmEuVjLig2hISkFSkkqPAHskk/umgoF5ffFbitSp/cHbWYxQ
+        RIj7cmxxmf2ciLQXU9jHWApSP7/moKT79FI9a0IwPZjA9r5cuTh+G0WMSJaUtyHamvajKdSk8hKihI5A
+        JJ4000Ha6aaaD//Z
+</value>
+  </data>
 </root>

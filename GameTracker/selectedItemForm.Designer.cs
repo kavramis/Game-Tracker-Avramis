@@ -36,6 +36,7 @@
             // 
             // SelectedGameOptions
             // 
+            this.SelectedGameOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SelectedGameOptions.FormattingEnabled = true;
             this.SelectedGameOptions.Items.AddRange(new object[] {
             "Open in Browser",
@@ -47,6 +48,8 @@
             // 
             // SelectedGameBtn
             // 
+            this.SelectedGameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectedGameBtn.ForeColor = System.Drawing.Color.Cyan;
             this.SelectedGameBtn.Location = new System.Drawing.Point(95, 148);
             this.SelectedGameBtn.Name = "SelectedGameBtn";
             this.SelectedGameBtn.Size = new System.Drawing.Size(191, 23);
@@ -62,6 +65,7 @@
             // watchListCheckLabel
             // 
             this.watchListCheckLabel.AutoSize = true;
+            this.watchListCheckLabel.ForeColor = System.Drawing.Color.Cyan;
             this.watchListCheckLabel.Location = new System.Drawing.Point(95, 109);
             this.watchListCheckLabel.Name = "watchListCheckLabel";
             this.watchListCheckLabel.Size = new System.Drawing.Size(35, 13);
@@ -72,10 +76,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(450, 234);
             this.Controls.Add(this.watchListCheckLabel);
             this.Controls.Add(this.SelectedGameBtn);
             this.Controls.Add(this.SelectedGameOptions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "selectedItemForm";
             this.Text = "What To Do?";
             this.ResumeLayout(false);

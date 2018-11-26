@@ -194,11 +194,7 @@ namespace GameTracker
             form.Show();
         }
 
-        private void GoToPreferencesButton_Click(object sender, EventArgs e)
-        {      
-            Preferences pref = new Preferences(loginForm);
-            pref.Show();
-        }
+        
 
         private void prefCategoryComboBox_MouseClick(object sender, MouseEventArgs e)
         {
@@ -233,6 +229,30 @@ namespace GameTracker
             LoadSteamResults();
             LoadIgResults();
 
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            HtmlResultsBox.Clear();
+        }
+
+        private void openPrefList_Click(object sender, EventArgs e)
+        {
+            PreferencesWatchList pr = new PreferencesWatchList(loginForm);
+            pr.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Preferences pref = new Preferences(loginForm);
+            pref.Show();
+            this.Hide();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
    
