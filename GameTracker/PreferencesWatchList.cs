@@ -12,17 +12,20 @@ namespace GameTracker
 {
     public partial class PreferencesWatchList : Form
     {
-        public PreferencesWatchList()
+        Preferences localForm;
+        public PreferencesWatchList(Preferences incForm)
         {
+            localForm = incForm;
             InitializeComponent();
         }
 
         private void PreferencesWatchList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'gameTracke_DatabaseDataSet.WatchList' table. You can move, or remove it, as needed.
-            this.watchListTableAdapter.Fill(this.gameTracke_DatabaseDataSet.WatchList);
+            this.watchListTableAdapter.FillByUser(this.gameTracke_DatabaseDataSet.WatchList,localForm.userName);
+            watchListDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             // TODO: This line of code loads data into the 'gameTracke_DatabaseDataSet.User_Type_of_games' table. You can move, or remove it, as needed.
-            this.user_Type_of_gamesTableAdapter.Fill(this.gameTracke_DatabaseDataSet.User_Type_of_games);
+            this.user_Type_of_gamesTableAdapter.fillUserPrefs(this.gameTracke_DatabaseDataSet.User_Type_of_games,localForm.userName);
 
         }
     }

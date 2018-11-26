@@ -37,7 +37,7 @@ namespace GameTracker
             var SteamUrl = "https://store.steampowered.com/search/?term=";
             var SearchTerm = SearchBox.Text + "\n";
             var fullUrl = SteamUrl + SearchTerm;
-            HtmlResultsBox.Text = fullUrl;
+            HtmlResultsBox.Text+= fullUrl +"\n";
             if (pageSpinner.Value > 0) {
                 fullUrl += "&page=" + pageSpinner.Value;
             }
@@ -51,7 +51,7 @@ namespace GameTracker
             var IgUrl = "https://www.instant-gaming.com/en/search/?q=";
             var SearchTerm = SearchBox.Text + "\n";
             var fullUrl = IgUrl + SearchTerm;
-            HtmlResultsBox.Text = fullUrl;
+            HtmlResultsBox.Text += fullUrl+"\n";
             if (pageSpinner.Value > 0)
             {
                 fullUrl += "&page=" + pageSpinner.Value;
@@ -115,7 +115,7 @@ namespace GameTracker
                     }
 
 
-                    HtmlResultsBox.Text += Name + Price + "\n";
+                   
                     GameTable.Rows.Add(Name, Price);
                     
 
@@ -156,7 +156,7 @@ namespace GameTracker
                     var itemSpecs = itemCover.SelectSingleNode(".//div[@class='shadow']");
                     var Price = itemSpecs.SelectSingleNode(".//div[@class='price']").InnerText;
 
-                    HtmlResultsBox.Text += Name + " " + Price;
+                    
                     GameTable.Rows.Add(Name, Price);
 
                 }
@@ -198,6 +198,41 @@ namespace GameTracker
         {      
             Preferences pref = new Preferences(loginForm);
             pref.Show();
+        }
+
+        private void prefCategoryComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable prefTable = new GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable();
+
+            user_Type_of_gamesTableAdapter1.fillUserPrefs(prefTable, loginForm.username);
+            prefCategoryComboBox.DataSource = prefTable;
+            prefCategoryComboBox.DisplayMember = "GameType";
+            
+        }
+
+        private void LoadPrefs_Click(object sender, EventArgs e)
+        {
+            string categoryForSearch = prefCategoryComboBox.GetItemText(prefCategoryComboBox.SelectedItem);
+            SearchBox.Text = categoryForSearch;
+            LoadSteamResults();
+            LoadIgResults();
+        }
+
+        private void WatchListComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            GameTracke_DatabaseDataSet.WatchListDataTable watchTable = new GameTracke_DatabaseDataSet.WatchListDataTable();
+            watchListTableAdapter1.FillByUser(watchTable, loginForm.username);
+            WatchListComboBox.DataSource = watchTable;
+            WatchListComboBox.DisplayMember = "GameTitle";
+        }
+
+        private void LoadWatchListBtn_Click(object sender, EventArgs e)
+        {
+            string gameForSearch = WatchListComboBox.GetItemText(WatchListComboBox.SelectedItem);
+            SearchBox.Text = gameForSearch;
+            LoadSteamResults();
+            LoadIgResults();
+
         }
     }
    

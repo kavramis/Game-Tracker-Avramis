@@ -2791,8 +2791,9 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserName, GameType FROM User_Type_of_games";
+            this._commandCollection[0].CommandText = "SELECT UserName, GameType FROM User_Type_of_games\r\nWHERE (UserName=?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UserName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UserName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT COUNT(*) AS Exp1\r\nFROM User_Type_of_games\r\nWHERE       (UserName = ?) AND " +
@@ -2812,8 +2813,14 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable dataTable) {
+        public virtual int fillUserPrefs(GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable dataTable, string UserName) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((UserName == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserName));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2825,8 +2832,14 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable GetData() {
+        public virtual GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable GetUserPrefs(string UserName) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((UserName == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserName));
+            }
             GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable dataTable = new GameTracke_DatabaseDataSet.User_Type_of_gamesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2986,13 +2999,13 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         public virtual object CheckDuplicates(string UserName, string GameType) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
             if ((UserName == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("UserName");
             }
             else {
                 command.Parameters[0].Value = ((string)(UserName));
             }
             if ((GameType == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("GameType");
             }
             else {
                 command.Parameters[1].Value = ((string)(GameType));
@@ -3027,13 +3040,13 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         public virtual int InsertToPrefs(string UserName, string GameType) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
             if ((UserName == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("UserName");
             }
             else {
                 command.Parameters[0].Value = ((string)(UserName));
             }
             if ((GameType == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("GameType");
             }
             else {
                 command.Parameters[1].Value = ((string)(GameType));
@@ -3213,7 +3226,7 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT GameTitle, UserName FROM WatchList";
@@ -3227,10 +3240,15 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UserName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UserName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO `WatchList` (`GameTitle`, `UserName`) VALUES (?, ?)";
+            this._commandCollection[2].CommandText = "SELECT GameTitle, UserName FROM WatchList\r\nWHERE UserName=?";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("GameTitle", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "GameTitle", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UserName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UserName", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO `WatchList` (`GameTitle`, `UserName`) VALUES (?, ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("GameTitle", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "GameTitle", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("UserName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "UserName", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3252,6 +3270,42 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual GameTracke_DatabaseDataSet.WatchListDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            GameTracke_DatabaseDataSet.WatchListDataTable dataTable = new GameTracke_DatabaseDataSet.WatchListDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUser(GameTracke_DatabaseDataSet.WatchListDataTable dataTable, string UserName) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((UserName == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserName));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual GameTracke_DatabaseDataSet.WatchListDataTable GetDataByUser(string UserName) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((UserName == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserName));
+            }
             GameTracke_DatabaseDataSet.WatchListDataTable dataTable = new GameTracke_DatabaseDataSet.WatchListDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3450,7 +3504,7 @@ namespace GameTracker.GameTracke_DatabaseDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertWatchList(string GameTitle, string UserName) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
             if ((GameTitle == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }

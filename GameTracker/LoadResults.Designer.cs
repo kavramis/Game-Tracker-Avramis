@@ -37,6 +37,12 @@
             this.igDataGridView = new System.Windows.Forms.DataGridView();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.GoToPreferencesButton = new System.Windows.Forms.Button();
+            this.prefCategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.user_Type_of_gamesTableAdapter1 = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.User_Type_of_gamesTableAdapter();
+            this.LoadPrefs = new System.Windows.Forms.Button();
+            this.WatchListComboBox = new System.Windows.Forms.ComboBox();
+            this.watchListTableAdapter1 = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter();
+            this.LoadWatchListBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SteamGamesDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageSpinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igDataGridView)).BeginInit();
@@ -54,9 +60,9 @@
             // 
             // HtmlResultsBox
             // 
-            this.HtmlResultsBox.Location = new System.Drawing.Point(168, 314);
+            this.HtmlResultsBox.Location = new System.Drawing.Point(-7, 291);
             this.HtmlResultsBox.Name = "HtmlResultsBox";
-            this.HtmlResultsBox.Size = new System.Drawing.Size(367, 198);
+            this.HtmlResultsBox.Size = new System.Drawing.Size(396, 175);
             this.HtmlResultsBox.TabIndex = 4;
             this.HtmlResultsBox.Text = "";
             // 
@@ -122,12 +128,62 @@
             this.GoToPreferencesButton.UseVisualStyleBackColor = true;
             this.GoToPreferencesButton.Click += new System.EventHandler(this.GoToPreferencesButton_Click);
             // 
+            // prefCategoryComboBox
+            // 
+            this.prefCategoryComboBox.FormattingEnabled = true;
+            this.prefCategoryComboBox.Location = new System.Drawing.Point(550, 314);
+            this.prefCategoryComboBox.Name = "prefCategoryComboBox";
+            this.prefCategoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.prefCategoryComboBox.TabIndex = 12;
+            this.prefCategoryComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.prefCategoryComboBox_MouseClick);
+            // 
+            // user_Type_of_gamesTableAdapter1
+            // 
+            this.user_Type_of_gamesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // LoadPrefs
+            // 
+            this.LoadPrefs.Location = new System.Drawing.Point(690, 314);
+            this.LoadPrefs.Name = "LoadPrefs";
+            this.LoadPrefs.Size = new System.Drawing.Size(118, 23);
+            this.LoadPrefs.TabIndex = 13;
+            this.LoadPrefs.Text = "LoadPrefereces";
+            this.LoadPrefs.UseVisualStyleBackColor = true;
+            this.LoadPrefs.Click += new System.EventHandler(this.LoadPrefs_Click);
+            // 
+            // WatchListComboBox
+            // 
+            this.WatchListComboBox.FormattingEnabled = true;
+            this.WatchListComboBox.Location = new System.Drawing.Point(550, 363);
+            this.WatchListComboBox.Name = "WatchListComboBox";
+            this.WatchListComboBox.Size = new System.Drawing.Size(121, 21);
+            this.WatchListComboBox.TabIndex = 14;
+            this.WatchListComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.WatchListComboBox_MouseClick);
+            // 
+            // watchListTableAdapter1
+            // 
+            this.watchListTableAdapter1.ClearBeforeFill = true;
+            // 
+            // LoadWatchListBtn
+            // 
+            this.LoadWatchListBtn.Location = new System.Drawing.Point(690, 360);
+            this.LoadWatchListBtn.Name = "LoadWatchListBtn";
+            this.LoadWatchListBtn.Size = new System.Drawing.Size(118, 23);
+            this.LoadWatchListBtn.TabIndex = 15;
+            this.LoadWatchListBtn.Text = "LoadWatchlist";
+            this.LoadWatchListBtn.UseVisualStyleBackColor = true;
+            this.LoadWatchListBtn.Click += new System.EventHandler(this.LoadWatchListBtn_Click);
+            // 
             // LoadResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(979, 566);
+            this.Controls.Add(this.LoadWatchListBtn);
+            this.Controls.Add(this.WatchListComboBox);
+            this.Controls.Add(this.LoadPrefs);
+            this.Controls.Add(this.prefCategoryComboBox);
             this.Controls.Add(this.GoToPreferencesButton);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.igDataGridView);
@@ -157,6 +213,12 @@
         private System.Windows.Forms.DataGridView igDataGridView;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button GoToPreferencesButton;
+        private System.Windows.Forms.ComboBox prefCategoryComboBox;
+        private GameTracke_DatabaseDataSetTableAdapters.User_Type_of_gamesTableAdapter user_Type_of_gamesTableAdapter1;
+        private System.Windows.Forms.Button LoadPrefs;
+        private System.Windows.Forms.ComboBox WatchListComboBox;
+        private GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter watchListTableAdapter1;
+        private System.Windows.Forms.Button LoadWatchListBtn;
     }
 }
 

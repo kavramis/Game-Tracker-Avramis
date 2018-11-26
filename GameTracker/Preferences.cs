@@ -13,8 +13,7 @@ namespace GameTracker
     
     public partial class Preferences : Form
     {
-        Login localForm = new Login();
-        PreferencesWatchList secondLocalForm=new PreferencesWatchList();
+        Login localForm = new Login();        
         public string userName;
         public string gameCategory;
         public Preferences(Login incomingForm)
@@ -56,7 +55,8 @@ namespace GameTracker
 
         private void openPrefList_Click(object sender, EventArgs e)
         {
-            PreferencesWatchList pw = new PreferencesWatchList();
+            this.userName = localForm.username;
+            PreferencesWatchList pw = new PreferencesWatchList(this);
             pw.Show();
         
         }
