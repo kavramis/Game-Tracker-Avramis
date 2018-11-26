@@ -98,6 +98,7 @@
             this.passWordTextBox.Name = "passWordTextBox";
             this.passWordTextBox.Size = new System.Drawing.Size(100, 15);
             this.passWordTextBox.TabIndex = 4;
+            this.passWordTextBox.UseSystemPasswordChar = true;
             // 
             // userTableAdapter1
             // 
@@ -192,8 +193,12 @@
             this.Controls.Add(this.uNameLabel);
             this.Controls.Add(this.loginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

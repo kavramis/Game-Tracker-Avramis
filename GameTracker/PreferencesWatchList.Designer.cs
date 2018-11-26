@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesWatchList));
             this.userCategoryPrefDataGridView = new System.Windows.Forms.DataGridView();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +46,10 @@
             this.Preferences = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.DeletePrefsButton = new System.Windows.Forms.Button();
             this.DeleteWatchlistButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.userCategoryPrefDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTypeofgamesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameTracke_DatabaseDataSet)).BeginInit();
@@ -60,13 +62,24 @@
             // userCategoryPrefDataGridView
             // 
             this.userCategoryPrefDataGridView.AutoGenerateColumns = false;
+            this.userCategoryPrefDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userCategoryPrefDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.userCategoryPrefDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userCategoryPrefDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userNameDataGridViewTextBoxColumn,
             this.gameTypeDataGridViewTextBoxColumn});
             this.userCategoryPrefDataGridView.DataSource = this.userTypeofgamesBindingSource;
+            this.userCategoryPrefDataGridView.EnableHeadersVisualStyles = false;
             this.userCategoryPrefDataGridView.Location = new System.Drawing.Point(181, 34);
             this.userCategoryPrefDataGridView.Name = "userCategoryPrefDataGridView";
+            this.userCategoryPrefDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.userCategoryPrefDataGridView.Size = new System.Drawing.Size(240, 150);
             this.userCategoryPrefDataGridView.TabIndex = 0;
             // 
@@ -99,13 +112,24 @@
             // watchListDataGridView
             // 
             this.watchListDataGridView.AutoGenerateColumns = false;
+            this.watchListDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.watchListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.watchListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.watchListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gameTitleDataGridViewTextBoxColumn,
             this.userNameDataGridViewTextBoxColumn1});
             this.watchListDataGridView.DataSource = this.watchListBindingSource;
+            this.watchListDataGridView.EnableHeadersVisualStyles = false;
             this.watchListDataGridView.Location = new System.Drawing.Point(529, 34);
             this.watchListDataGridView.Name = "watchListDataGridView";
+            this.watchListDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.watchListDataGridView.Size = new System.Drawing.Size(240, 150);
             this.watchListDataGridView.TabIndex = 1;
             // 
@@ -161,6 +185,15 @@
             this.panel1.Size = new System.Drawing.Size(110, 452);
             this.panel1.TabIndex = 4;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(92, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 22);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // ExitButton
             // 
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -198,15 +231,6 @@
             this.DeleteWatchlistButton.Text = "DeleteWatchlist";
             this.DeleteWatchlistButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(92, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 22);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // PreferencesWatchList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,9 +246,13 @@
             this.Controls.Add(this.userCategoryPrefDataGridView);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PreferencesWatchList";
-            this.Text = "PreferencesWatchList";
+            this.Text = "My Preferences";
             this.Load += new System.EventHandler(this.PreferencesWatchList_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PreferencesWatchList_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PreferencesWatchList_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PreferencesWatchList_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.userCategoryPrefDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTypeofgamesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameTracke_DatabaseDataSet)).EndInit();

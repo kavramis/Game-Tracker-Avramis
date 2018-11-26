@@ -75,6 +75,7 @@
             this.passwordTxtBox.Name = "passwordTxtBox";
             this.passwordTxtBox.Size = new System.Drawing.Size(136, 15);
             this.passwordTxtBox.TabIndex = 1;
+            this.passwordTxtBox.UseSystemPasswordChar = true;
             // 
             // verificationLabel
             // 
@@ -169,6 +170,7 @@
             this.ConfirmPasswordtxtBox.Name = "ConfirmPasswordtxtBox";
             this.ConfirmPasswordtxtBox.Size = new System.Drawing.Size(136, 15);
             this.ConfirmPasswordtxtBox.TabIndex = 1;
+            this.ConfirmPasswordtxtBox.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -252,8 +254,12 @@
             this.Controls.Add(this.userNameTxtBox);
             this.ForeColor = System.Drawing.Color.Cyan;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "registerForm";
-            this.Text = "registerForm";
+            this.Text = "Register";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.registerForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.registerForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.registerForm_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

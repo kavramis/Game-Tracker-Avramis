@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(selectedItemForm));
             this.SelectedGameOptions = new System.Windows.Forms.ComboBox();
             this.SelectedGameBtn = new System.Windows.Forms.Button();
             this.watchListTableAdapter1 = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter();
@@ -82,8 +83,12 @@
             this.Controls.Add(this.SelectedGameBtn);
             this.Controls.Add(this.SelectedGameOptions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "selectedItemForm";
             this.Text = "What To Do?";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.selectedItemForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.selectedItemForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.selectedItemForm_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

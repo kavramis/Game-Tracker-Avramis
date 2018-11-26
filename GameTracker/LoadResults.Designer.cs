@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadResults));
             this.LoadSteamBtn = new System.Windows.Forms.Button();
             this.HtmlResultsBox = new System.Windows.Forms.RichTextBox();
@@ -55,6 +58,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.OutputLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SteamGamesDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageSpinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igDataGridView)).BeginInit();
@@ -79,43 +83,53 @@
             // 
             // HtmlResultsBox
             // 
-            this.HtmlResultsBox.Location = new System.Drawing.Point(265, 314);
+            this.HtmlResultsBox.Location = new System.Drawing.Point(233, 523);
             this.HtmlResultsBox.Name = "HtmlResultsBox";
-            this.HtmlResultsBox.Size = new System.Drawing.Size(309, 175);
+            this.HtmlResultsBox.Size = new System.Drawing.Size(387, 43);
             this.HtmlResultsBox.TabIndex = 4;
             this.HtmlResultsBox.Text = "";
             // 
             // SearchBox
             // 
             this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchBox.Location = new System.Drawing.Point(3, 61);
+            this.SearchBox.Location = new System.Drawing.Point(3, 74);
+            this.SearchBox.Multiline = true;
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(84, 13);
+            this.SearchBox.Size = new System.Drawing.Size(179, 22);
             this.SearchBox.TabIndex = 5;
             // 
             // SteamGamesDataGridView1
             // 
-            this.SteamGamesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SteamGamesDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cyan;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SteamGamesDataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SteamGamesDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.SteamGamesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SteamGamesDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SteamGamesDataGridView1.EnableHeadersVisualStyles = false;
             this.SteamGamesDataGridView1.Location = new System.Drawing.Point(265, 32);
             this.SteamGamesDataGridView1.Name = "SteamGamesDataGridView1";
-            this.SteamGamesDataGridView1.Size = new System.Drawing.Size(309, 260);
+            this.SteamGamesDataGridView1.Size = new System.Drawing.Size(406, 260);
             this.SteamGamesDataGridView1.TabIndex = 6;
             this.SteamGamesDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SteamGamesDataGridView1_CellDoubleClick);
             // 
             // pageSpinner
             // 
-            this.pageSpinner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pageSpinner.Location = new System.Drawing.Point(0, 87);
+            this.pageSpinner.Location = new System.Drawing.Point(0, 125);
             this.pageSpinner.Name = "pageSpinner";
-            this.pageSpinner.Size = new System.Drawing.Size(120, 16);
+            this.pageSpinner.Size = new System.Drawing.Size(182, 20);
             this.pageSpinner.TabIndex = 7;
             this.pageSpinner.ValueChanged += new System.EventHandler(this.pageSpinner_ValueChanged);
             // 
@@ -133,10 +147,22 @@
             // 
             // igDataGridView
             // 
+            this.igDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.igDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.igDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.igDataGridView.Location = new System.Drawing.Point(615, 32);
+            this.igDataGridView.EnableHeadersVisualStyles = false;
+            this.igDataGridView.Location = new System.Drawing.Point(679, 32);
             this.igDataGridView.Name = "igDataGridView";
-            this.igDataGridView.Size = new System.Drawing.Size(319, 260);
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.igDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.igDataGridView.Size = new System.Drawing.Size(394, 260);
             this.igDataGridView.TabIndex = 9;
             this.igDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.igDataGridView_CellDoubleClick);
             // 
@@ -144,7 +170,7 @@
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.ForeColor = System.Drawing.Color.Cyan;
-            this.welcomeLabel.Location = new System.Drawing.Point(3, 123);
+            this.welcomeLabel.Location = new System.Drawing.Point(13, 161);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(35, 13);
             this.welcomeLabel.TabIndex = 10;
@@ -154,9 +180,9 @@
             // 
             this.prefCategoryComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prefCategoryComboBox.FormattingEnabled = true;
-            this.prefCategoryComboBox.Location = new System.Drawing.Point(679, 314);
+            this.prefCategoryComboBox.Location = new System.Drawing.Point(3, 231);
             this.prefCategoryComboBox.Name = "prefCategoryComboBox";
-            this.prefCategoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.prefCategoryComboBox.Size = new System.Drawing.Size(179, 21);
             this.prefCategoryComboBox.TabIndex = 12;
             this.prefCategoryComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.prefCategoryComboBox_MouseClick);
             // 
@@ -168,7 +194,7 @@
             // 
             this.LoadPrefs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadPrefs.ForeColor = System.Drawing.Color.Cyan;
-            this.LoadPrefs.Location = new System.Drawing.Point(816, 312);
+            this.LoadPrefs.Location = new System.Drawing.Point(3, 202);
             this.LoadPrefs.Name = "LoadPrefs";
             this.LoadPrefs.Size = new System.Drawing.Size(118, 23);
             this.LoadPrefs.TabIndex = 13;
@@ -180,9 +206,9 @@
             // 
             this.WatchListComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WatchListComboBox.FormattingEnabled = true;
-            this.WatchListComboBox.Location = new System.Drawing.Point(679, 361);
+            this.WatchListComboBox.Location = new System.Drawing.Point(0, 309);
             this.WatchListComboBox.Name = "WatchListComboBox";
-            this.WatchListComboBox.Size = new System.Drawing.Size(121, 21);
+            this.WatchListComboBox.Size = new System.Drawing.Size(182, 21);
             this.WatchListComboBox.TabIndex = 14;
             this.WatchListComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.WatchListComboBox_MouseClick);
             // 
@@ -194,7 +220,7 @@
             // 
             this.LoadWatchListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadWatchListBtn.ForeColor = System.Drawing.Color.Cyan;
-            this.LoadWatchListBtn.Location = new System.Drawing.Point(816, 361);
+            this.LoadWatchListBtn.Location = new System.Drawing.Point(0, 280);
             this.LoadWatchListBtn.Name = "LoadWatchListBtn";
             this.LoadWatchListBtn.Size = new System.Drawing.Size(118, 23);
             this.LoadWatchListBtn.TabIndex = 15;
@@ -206,7 +232,7 @@
             // 
             this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearButton.ForeColor = System.Drawing.Color.Cyan;
-            this.ClearButton.Location = new System.Drawing.Point(266, 502);
+            this.ClearButton.Location = new System.Drawing.Point(626, 523);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(66, 43);
             this.ClearButton.TabIndex = 16;
@@ -230,7 +256,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label2.ForeColor = System.Drawing.Color.Cyan;
-            this.label2.Location = new System.Drawing.Point(612, 8);
+            this.label2.Location = new System.Drawing.Point(675, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 19);
             this.label2.TabIndex = 18;
@@ -267,7 +293,7 @@
             // 
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.ForeColor = System.Drawing.Color.Cyan;
-            this.ExitButton.Location = new System.Drawing.Point(863, 511);
+            this.ExitButton.Location = new System.Drawing.Point(1044, 523);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(71, 43);
             this.ExitButton.TabIndex = 13;
@@ -301,13 +327,13 @@
             this.panel1.Controls.Add(this.openPrefList);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 113);
+            this.panel1.Size = new System.Drawing.Size(228, 113);
             this.panel1.TabIndex = 19;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(357, 502);
+            this.pictureBox1.Location = new System.Drawing.Point(698, 523);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 43);
             this.pictureBox1.TabIndex = 20;
@@ -320,10 +346,24 @@
             this.panel2.Controls.Add(this.SearchBox);
             this.panel2.Controls.Add(this.pageSpinner);
             this.panel2.Controls.Add(this.welcomeLabel);
+            this.panel2.Controls.Add(this.prefCategoryComboBox);
+            this.panel2.Controls.Add(this.LoadPrefs);
+            this.panel2.Controls.Add(this.WatchListComboBox);
+            this.panel2.Controls.Add(this.LoadWatchListBtn);
             this.panel2.Location = new System.Drawing.Point(-1, 118);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(136, 183);
+            this.panel2.Size = new System.Drawing.Size(228, 448);
             this.panel2.TabIndex = 21;
+            // 
+            // OutputLabel
+            // 
+            this.OutputLabel.AutoSize = true;
+            this.OutputLabel.ForeColor = System.Drawing.Color.Cyan;
+            this.OutputLabel.Location = new System.Drawing.Point(233, 507);
+            this.OutputLabel.Name = "OutputLabel";
+            this.OutputLabel.Size = new System.Drawing.Size(42, 13);
+            this.OutputLabel.TabIndex = 22;
+            this.OutputLabel.Text = "Output:";
             // 
             // LoadResults
             // 
@@ -332,7 +372,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(979, 566);
+            this.ClientSize = new System.Drawing.Size(1116, 566);
+            this.Controls.Add(this.OutputLabel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -340,19 +381,18 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClearButton);
-            this.Controls.Add(this.LoadWatchListBtn);
-            this.Controls.Add(this.WatchListComboBox);
-            this.Controls.Add(this.LoadPrefs);
-            this.Controls.Add(this.prefCategoryComboBox);
             this.Controls.Add(this.igDataGridView);
             this.Controls.Add(this.SteamGamesDataGridView1);
             this.Controls.Add(this.HtmlResultsBox);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadResults";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Track Games";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoadResults_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoadResults_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LoadResults_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.SteamGamesDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageSpinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igDataGridView)).EndInit();
@@ -393,6 +433,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label OutputLabel;
     }
 }
 
