@@ -18,7 +18,9 @@ namespace GameTracker
 {
     public partial class LoadResults : Form
     {
-       public string urlVar;
+        public string urlVar;
+        public string gameName;
+        public string user;
         Login loginForm = new Login();
         
         public LoadResults(Login incomingForm)
@@ -177,19 +179,23 @@ namespace GameTracker
         }
         private void SteamGamesDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.gameName = SteamGamesDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            this.user = loginForm.username;
            this.urlVar = constructSteamUrl();                
             selectedItemForm form = new selectedItemForm(this);
             form.Show();
         }
         private void igDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.gameName = igDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            this.user = loginForm.username;
             this.urlVar = constructIgUrl();
             selectedItemForm form = new selectedItemForm(this);
             form.Show();
         }
 
         private void GoToPreferencesButton_Click(object sender, EventArgs e)
-        {
+        {      
             Preferences pref = new Preferences(loginForm);
             pref.Show();
         }

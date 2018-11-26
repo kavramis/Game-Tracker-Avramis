@@ -30,6 +30,8 @@
         {
             this.SelectedGameOptions = new System.Windows.Forms.ComboBox();
             this.SelectedGameBtn = new System.Windows.Forms.Button();
+            this.watchListTableAdapter1 = new GameTracker.GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter();
+            this.watchListCheckLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SelectedGameOptions
@@ -53,16 +55,31 @@
             this.SelectedGameBtn.UseVisualStyleBackColor = true;
             this.SelectedGameBtn.Click += new System.EventHandler(this.SelectedGameBtn_Click);
             // 
+            // watchListTableAdapter1
+            // 
+            this.watchListTableAdapter1.ClearBeforeFill = true;
+            // 
+            // watchListCheckLabel
+            // 
+            this.watchListCheckLabel.AutoSize = true;
+            this.watchListCheckLabel.Location = new System.Drawing.Point(95, 109);
+            this.watchListCheckLabel.Name = "watchListCheckLabel";
+            this.watchListCheckLabel.Size = new System.Drawing.Size(35, 13);
+            this.watchListCheckLabel.TabIndex = 2;
+            this.watchListCheckLabel.Text = "label1";
+            // 
             // selectedItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 234);
+            this.Controls.Add(this.watchListCheckLabel);
             this.Controls.Add(this.SelectedGameBtn);
             this.Controls.Add(this.SelectedGameOptions);
             this.Name = "selectedItemForm";
             this.Text = "What To Do?";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +87,7 @@
 
         private System.Windows.Forms.ComboBox SelectedGameOptions;
         private System.Windows.Forms.Button SelectedGameBtn;
+        private GameTracke_DatabaseDataSetTableAdapters.WatchListTableAdapter watchListTableAdapter1;
+        private System.Windows.Forms.Label watchListCheckLabel;
     }
 }

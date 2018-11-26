@@ -14,11 +14,13 @@ namespace GameTracker
     public partial class Preferences : Form
     {
         Login localForm = new Login();
+        PreferencesWatchList secondLocalForm=new PreferencesWatchList();
         public string userName;
         public string gameCategory;
         public Preferences(Login incomingForm)
         {
-            localForm = incomingForm; 
+            localForm = incomingForm;
+            
             InitializeComponent();
         }
 

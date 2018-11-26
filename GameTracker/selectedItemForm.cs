@@ -19,18 +19,27 @@ namespace GameTracker
         {
             LrForm = incomingForm;
             InitializeComponent();
+
         }
        
 
         private void SelectedGameBtn_Click(object sender, EventArgs e)
         {
-           
-            
-            if (SelectedGameOptions.SelectedIndex == 0) {
+
+
+            if (SelectedGameOptions.SelectedIndex == 0)
+            {
                 string url = LrForm.urlVar;
                 System.Diagnostics.Process.Start(url);
-                
-               
+            }
+            else if (SelectedGameOptions.SelectedIndex == 1)
+            {
+                if ((int)watchListTableAdapter1.CheckWatchListDuplicate(LrForm.gameName, LrForm.user) == 0)
+                {
+                    watchListTableAdapter1.InsertWatchList(LrForm.gameName, LrForm.user);
+                }
+                else { watchListCheckLabel.Text = "Already Added to watch list"; }
+
             }
         }
     }
