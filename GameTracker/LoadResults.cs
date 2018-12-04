@@ -240,19 +240,20 @@ namespace GameTracker
         {
             PreferencesWatchList pr = new PreferencesWatchList(loginForm);
             pr.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Preferences pref = new Preferences(loginForm);
             pref.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();    
+           // Application.Exit();
         }
         private bool mouseDown;
         private Point lastLocation;

@@ -70,7 +70,8 @@ namespace GameTracker
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            //Application.Exit();
         }
 
         private bool mouseDown;
